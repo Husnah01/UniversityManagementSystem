@@ -61,4 +61,17 @@ public class Course {
                 ", credits=" + credits +
                 '}';
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+
+        Course course = (Course) o;
+        return courseId == course.courseId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(courseId);
+    }
 }
