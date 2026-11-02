@@ -7,6 +7,31 @@ import model.Student;
 import java.util.Scanner;
 
 public class Main {
+    // Safely read an integer
+    private static int readInt(Scanner scanner, String message) {
+        while (true) {
+            System.out.print(message);
+
+            try {
+                return Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! Please enter a whole number.");
+            }
+        }
+    }
+
+    // Safely read a decimal number
+    private static double readDouble(Scanner scanner, String message) {
+        while (true) {
+            System.out.print(message);
+
+            try {
+                return Double.parseDouble(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input! Please enter a valid number.");
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
